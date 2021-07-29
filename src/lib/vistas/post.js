@@ -4,12 +4,10 @@ export const post = () => {
     let contenido = `
     <main>
      <div>
-      <h3>Nombre de usuario</h3>
-      <input type="text" name="" id="">
+      <h3 id="nombreObtenido">Nombre de usuario</h3>
+      <input type="text" name="" id="publicacion">
      </div>
-     <button>
-      <a href="#/post">publicar</a>
-     </button>
+     <button id="publicar">publicar</button>
     </main>
     `
     contenedor.innerHTML = contenido;
