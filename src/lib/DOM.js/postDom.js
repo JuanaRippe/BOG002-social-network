@@ -1,16 +1,17 @@
-import { obtenerNombres } from '../funcionesPuras.js'
-import { guardarPublicacion } from '../funcionesPuras.js'
+import { obtenerNombres, guardarPublicacion, agregarPost } from '../funcionesPuras.js'
 
 export function domPost() {
+    const nombresObtenidos = obtenerNombres();
    let mostrarnombres = document.getElementById("nombreObtenido");
-   mostrarnombres.innerHTML = "Hola " + obtenerNombres();
+   mostrarnombres.innerHTML = "Hola " + nombresObtenidos;
 
-   const guardarPost = document.getElementById("publicar");
-    guardarPost.addEventListener("click", function () {
+   const guardarPublicaciones = document.getElementById("publicar");
+    guardarPublicaciones.addEventListener("click", function () {
         let guardarPost = document.getElementById("publicacion").value;
-        console.log(guardarPost);
-        guardarPublicacion(guardarPost);
-       // window.location.hash =  "#/home";
+        const postAgregado = agregarPost(nombresObtenidos, guardarPost);
+        guardarPublicacion(postAgregado);
+         window.location.hash = "#/home"
     }
     );
+
 }

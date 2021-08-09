@@ -4,7 +4,7 @@ import { hilo } from './vistas/hilo.js';
 import { post } from './vistas/post.js';
 import { domIngresar } from '../lib/DOM.js/ingresarDom.js'
 import { domPost } from './DOM.js/postDom.js'
-//import { domHome } from './DOM.js/homeDom.js'
+import { domHome } from './DOM.js/homeDom.js'
 
 
 let mostrarTemplates = (hash) => {
@@ -18,7 +18,7 @@ let mostrarTemplates = (hash) => {
         break;
         case "#/home":
         containerRoot.appendChild(home());
-        //domHome();
+        domHome();
         break;
         case "#/hilo":
         containerRoot.appendChild(hilo());

@@ -2,10 +2,10 @@ export const home = () => {
     let contenedor = document.createElement("div");
 
     let contenido = `
+    <header>TITULO</header>
     <main>
-     <header>TITULO</header>
-     <div>Este es un
-      <a href="#/hilo">hilo</a>
+     <div class="divPublicaciones">
+     <!-- Este es un <a href="#/hilo">hilo</a> -->
      </div>
      <button>
       <a href="#/post">+</a>
