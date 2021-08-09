@@ -4,7 +4,7 @@ export const home = () => {
     let contenido = `
     <header>TITULO</header>
     <main>
-     <div class="divPublicaciones">
+     <div id="divPublicaciones">
      <!-- Este es un <a href="#/hilo">hilo</a> -->
      </div>
      <button>
