@@ -18,6 +18,7 @@ export const agregarPost = (nombreIngresado, textoPost) => {
   };
   arrayPublicaciones.push(nuevoPost);
   //console.log(arrayPublicaciones);
+
   return arrayPublicaciones;
 }
 
@@ -26,6 +27,8 @@ export const guardarPublicacion = (publicacion) => {
 };
 
 export const obtenerPublicacion = () => {
-  let obtenerPost = localStorage.getItem("publicación");
-  return obtenerPost;
+  arrayPublicaciones = JSON.parse(localStorage.getItem("publicación")) || [];
+ // console.log(JSON.parse(obtenerPost));
+  return arrayPublicaciones;
 }
+
