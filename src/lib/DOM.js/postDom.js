@@ -10,15 +10,10 @@ export function domPost() {
    const guardarPublicaciones = document.getElementById("publicar");
     guardarPublicaciones.addEventListener("click", function() {
         let guardarPost = document.getElementById("publicacion").value;
-        const postAgregado = agregarPost(nombresObtenidos, guardarPost);
+        const postAgregado = agregarPost(nombresObtenidos, guardarPost, this.id);
+        
         guardarPublicacion(postAgregado);
          window.location.hash = "#/home"
     });
-    
-    //Elimino la publicación 
-    // const eliminarPublicacion = document.getElementById("btnEliminar");
-    // eliminarPublicacion.addEventListener("click",  function() {
-
-    // });
 
 }

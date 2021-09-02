@@ -11,13 +11,23 @@ export const obtenerNombres = () => {
 }
 
 let arrayPublicaciones = [];
-export const agregarPost = (nombreIngresado, textoPost) => {
+export const agregarPost = (nombreIngresado, textoPost, id) => {
   let nuevoPost = {
     nombre: nombreIngresado,
-    publicacion: textoPost
+    publicacion: textoPost,
+    id: arrayPublicaciones.length
   };
+
+  // console.log(nuevoPost.id);
+  // console.log( arrayPublicaciones[arrayPublicaciones.length]);
   arrayPublicaciones.push(nuevoPost);
-  //console.log(arrayPublicaciones);
+  
+  // console.log(nuevoPost.id);
+  // if (nuevoPost.id === arrayPublicaciones[arrayPublicaciones.length-1].id){
+  //   let nuevoID = nuevoPost.id
+  //   nuevoID = arrayPublicaciones[arrayPublicaciones.length-1].id + 1;
+  //   return nuevoID
+  // }
 
   return arrayPublicaciones;
 }
@@ -31,4 +41,3 @@ export const obtenerPublicacion = () => {
  // console.log(JSON.parse(obtenerPost));
   return arrayPublicaciones;
 }
-
