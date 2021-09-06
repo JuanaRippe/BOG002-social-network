@@ -1,5 +1,5 @@
 import { obtenerPublicacion, guardarPublicacion } from '../funcionesPuras.js'
-import { post } from '../vistas/post.js';
+
 
 export function domHome() {
   //Publicaciones
@@ -10,10 +10,8 @@ export function domHome() {
 function crearPost(publicacionesGuardadas){
   for (let i = 0; i < publicacionesGuardadas.length; i++) {
 
-    // console.log(publicacionesGuardadas[i].publicacion);
-
     let tarjetaPost = document.createElement("div");
-    tarjetaPost.setAttribute("id", "post");
+    tarjetaPost.setAttribute("id", [i]);
 
     let nombreUsario = document.createElement("h3");
     nombreUsario.textContent = publicacionesGuardadas[i].nombre;
@@ -46,28 +44,26 @@ function crearPost(publicacionesGuardadas){
   const eliminarPublicaciones = document.getElementsByClassName("btnEliminar");
   for(let i=0; i<eliminarPublicaciones.length; i++){
     eliminarPublicaciones[i].addEventListener("click", function(e){
-        // console.log(e.target.id);
-     let eliminarP = publicacionesGuardadas.filter( publicacion => publicacion.id != e.target.id)
-      guardarPublicacion(eliminarP);
-      // let publicacionesGuardadas2 = obtenerPublicacion();
-      // crearPost(publicacionesGuardadas2);
-      
 
+     let eliminarP = publicacionesGuardadas.filter( publicacion => publicacion.id != e.target.id)
+      // guardarPublicacion(eliminarP);
+     
+      var nuevoArray = eliminarP.map(function(objeto, index) {
+        // console.log(objeto);
+        let objetoNuevo = {
+          nombre: objeto.nombre,
+          publicacion: objeto.publicacion,
+          id: index
+        };
+        return objetoNuevo
+      });
+      guardarPublicacion(nuevoArray);
+      location.reload();
 
     //   let publicacionesGuardadas2 = obtenerPublicacion();
     // console.log(publicacionesGuardadas2);
-      
-    
-      // if (e.target.id = "post")
-      //    var elementoHijo = document.getElementById("post");
-      //    var elementoPadre = elementoHijo.parentNode;
-      //    elementoPadre.removeChild(elementoHijo);
 
-        // obtenerPublicacion(eliminarP);
-         
-        //  console.log(publicacionesGuardadas2);
-        //  guardarPublicacion(eliminarP);
-        // console.log(publicacionesGuardadas);
+
     });
   }
 

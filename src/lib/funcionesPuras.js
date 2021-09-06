@@ -18,10 +18,9 @@ export const agregarPost = (nombreIngresado, textoPost, id) => {
     id: arrayPublicaciones.length
   };
 
-  // console.log(nuevoPost.id);
-  // console.log( arrayPublicaciones[arrayPublicaciones.length]);
   arrayPublicaciones.push(nuevoPost);
-  
+  // console.log(arrayPublicaciones);
+
   // console.log(nuevoPost.id);
   // if (nuevoPost.id === arrayPublicaciones[arrayPublicaciones.length-1].id){
   //   let nuevoID = nuevoPost.id
